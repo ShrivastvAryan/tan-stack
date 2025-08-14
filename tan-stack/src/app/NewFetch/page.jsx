@@ -23,6 +23,7 @@ const FetchNew = () => {
   const { data, isLoading, error } = useQuery({
     queryKey: ["posts"], // like useState for caching
     queryFn: getPostsData, // like useEffect for fetching
+    staleTime:5000, //This it will go stale after 5s
   });
 
   if (isLoading) {
